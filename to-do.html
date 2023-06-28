@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To do</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .to-container {
+      width: 300px;
+      height: 50vh;
+      background-color: aqua;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .list {
+      color: white;
+      font-size: large;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      list-style-type: none;
+    }
+
+    .listContainer {
+      display: flex;
+      justify-content: space-around;
+      width: 300px;
+      border: 1px solid black;
+      text-decoration: overline;
+    }
+  </style>
+  <body>
+    <h1>TO DO</h1>
+
+    <div class="to-container">
+      <div>
+        <input id="input" type="text" />
+        <button onclick="add()" id="btn">add</button>
+      </div>
+      <ul id="ol"></ul>
+    </div>
+
+    <script src="./to-do.js"></script>
+  </body>
+</html>

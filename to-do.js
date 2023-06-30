@@ -20,6 +20,17 @@ function draw(params) {
     // check хийгдэх үед текстийг дарна.
     checkbox.addEventListener("click", check);
 
+    function check(event) {
+      if (event.target.checked) {
+        li.style.textDecoration = "line-through";
+      } else {
+        li.style.textDecoration = "none";
+      }
+      for (let i = 0; i < $checkbox.length; i++) {
+        console.log($checkbox[i].checked);
+      }
+    }
+
     // delete хийх
     del.addEventListener("click", delet);
     function delet() {
@@ -37,6 +48,7 @@ function draw(params) {
     // add class, content
     del.innerText = "Delete";
     checkbox.type = "checkbox";
+    checkbox.classList.add("checkbox");
     listContainer.classList.add("listContainer");
     li.classList.add("list");
     li.innerHTML = list[i];
@@ -48,16 +60,9 @@ function draw(params) {
 
     $ol.append(listContainer);
   }
+  const $checkbox = document.getElementsByClassName("checkbox");
 }
 draw();
-
-function check(event) {
-  if (event.target.checked) {
-    li.style.textDecoration = "line-through";
-  } else {
-    li.style.textDecoration = "none";
-  }
-}
 
 // 1. add function бичих /input -ийн утгыг хадгалж авах, input -ийн утгыг DOM -руу нэмэх /
 
